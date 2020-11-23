@@ -30,10 +30,22 @@ type LandlordType {
   postalCode: String!
 }
 
+input ListingInput {
+  title: String!
+  description: String!
+}
+
+type ListingType {
+  _id: ID!
+  title: String!
+  description: String!
+}
+
 type Mutation {
   createTenant(input: TenantInput!): TenantType!
   createAccount(input: AccountInput!): AccountType!
   createLandlord(input: LandlordInput!): LandlordType!
+  createListing(input: ListingInput!): ListingType!
 }
 
 type Query {
@@ -41,6 +53,7 @@ type Query {
   hello: String!
   accounts: [AccountType!]!
   Landlords: [LandlordType!]!
+  Listings: [ListingType!]!
 }
 
 input TenantInput {
