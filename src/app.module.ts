@@ -8,6 +8,7 @@ import { AccountModule } from './account/account.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { join } from 'path';
 import { LandlordModule } from './landlord/landlord.module';
+import {ListingModule} from './listing/listing.module';
 
 @Module({
   imports: [
@@ -28,6 +29,7 @@ import { LandlordModule } from './landlord/landlord.module';
       logging: true,
     }),
     LandlordModule,
+    ListingModule,
     // MongooseModule.forRoot('mongodb://localhost/nest'),
   ],
   controllers: [AppController],
