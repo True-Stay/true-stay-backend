@@ -7,8 +7,8 @@ export class AccountInput {
   // @Field()
   // readonly lastName: string;
   @Field()
-  readonly email: string;
-  @Field()
+  readonly email?: string;
+  @Field({ nullable: true })
   readonly phoneNumber: string;
   @Field()
   readonly password: string;

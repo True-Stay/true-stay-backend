@@ -1,4 +1,6 @@
-import { Entity, ObjectIdColumn, Column } from 'typeorm';
+import { Tenant } from './../../tenants/entity/tenants.entity';
+import { Landlord } from 'src/landlord/entity/landlord.entity';
+import { Entity, ObjectIdColumn, Column, OneToOne, JoinColumn } from 'typeorm';
 
 @Entity()
 export class Account {
@@ -14,4 +16,17 @@ export class Account {
   password: string;
   @Column()
   phoneNumber: string;
+
+  @OneToOne(type => Landlord)
+  landlord: Landlord;
+
+  @OneToOne(type => Tenant)
+  tenant: Tenant;
+  // @OneToOne(() => Landlord)
+  // @JoinColumn()
+  // landlord: Landlord;
+
+  // @OneToOne(() => Tenant)
+
+  // tenant: Tenant;
 }

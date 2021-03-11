@@ -5,7 +5,7 @@
 
 input AccountInput {
   email: String!
-  phoneNumber: String!
+  phoneNumber: String
   password: String!
 }
 
@@ -13,9 +13,12 @@ type AccountType {
   _id: ID!
   email: String!
   phoneNumber: String!
+  token: String!
+  reqType: String!
 }
 
 input LandlordInput {
+  _id: String!
   name: String!
   address: String!
   city: String!
@@ -43,7 +46,7 @@ type ListingType {
 
 type Mutation {
   createTenant(input: TenantInput!): TenantType!
-  createAccount(input: AccountInput!): AccountType!
+  login(input: AccountInput!): AccountType!
   createLandlord(input: LandlordInput!): LandlordType!
   createListing(input: ListingInput!): ListingType!
 }

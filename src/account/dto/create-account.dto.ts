@@ -12,6 +12,14 @@ export class AccountType {
   readonly email: string;
   @Field()
   readonly phoneNumber: string;
+
+  @Field()
+  readonly token: string;
+
+  @Field()
+  readonly reqType: string;
+  // @Field()
+  // readonly token: string;
 }
 
 // export enum subscriptionUserType {

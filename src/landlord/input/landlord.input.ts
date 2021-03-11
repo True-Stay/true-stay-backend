@@ -4,6 +4,8 @@ import { GraphQLList, GraphQLString } from 'graphql';
 @InputType()
 export class LandlordInput {
   @Field()
+  readonly _id: string;
+  @Field()
   readonly name: string;
   @Field()
   readonly address: string;

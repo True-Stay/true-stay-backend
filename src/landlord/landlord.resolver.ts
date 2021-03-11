@@ -2,6 +2,7 @@ import { LandlordInput } from './input/landlord.input';
 import { LandlordType } from './dto/landlord.dto';
 import { LandlordService } from './landlord.service';
 import { Resolver, Query, Args, Mutation } from '@nestjs/graphql';
+import { AccountService } from 'src/account/account.service';
 
 @Resolver('Landlord')
 export class LandlordResolver {
